@@ -1,0 +1,266 @@
+//Nos imports
+@import "grids";
+//importation de la font OpenSans
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,400italic,300italic);
+
+//Elements, variables global
+$primary: #33333B; 
+$secondary: #F4F4F6;
+$thirdly: #FF9B41;
+
+
+//Configuration du framework Susy plus d'informations : susy.oddbird.net
+$susy: (
+        columns: 12,
+        gutters: .25,
+        container: 960px
+);
+
+// 
+body{
+  background: $primary;
+  color: $secondary;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+.content {
+  margin-top: 60px;
+  box-sizing: border-box;
+  @include container;
+  .sidebar {
+    @include span(5);
+  }
+}
+
+//Alignement vertical css3 is the best
+
+.vertical-align{
+  display: flex;
+  min-height: 100vh;
+}
+.box-v-align{
+  margin: auto;
+  display: block;
+}
+
+//HEADER et MENU
+
+header{
+  @include span(12);
+  padding: 10px 18px 10px 18px;
+  height: 50px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  a{
+    color: $thirdly;
+  }
+}
+
+.menu-left{
+  float: left;
+  height: 100%;
+}
+.menu-right{
+  float: right;
+  height: 100%;
+
+}
+
+.sidebar{
+  width: 300px;
+  max-width: 300px;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  bottom: 0;
+  background: #1b1b21;
+  transition: all 500ms ease;
+  ul{
+    width: 100%;
+    padding: 0;
+    li{
+      width: 100%;
+      list-style: none;
+      margin: 0;
+      padding: 13px 20px 13px 20px;
+      text-align: center;
+      color: $secondary;
+      font-weight: 700;
+      box-sizing: border-box;
+      border-top: 1px solid #636262;
+      a{
+        text-align: left;
+        width: 100%;
+        height: 100%;
+        display: block;
+        text-transform: uppercase;
+        font-weight: 400;
+        text-decoration: none;
+        i{
+          margin-right: 10px;
+        }
+      }
+    }
+    li:first-child{
+      border-top: none;
+      padding-bottom: 30px;
+    }
+    li:last-child{
+      border-bottom: 1px solid #636262;
+    }
+    li:hover{
+      background: rgba(0,0,0,0.1);
+    }
+
+  }
+}
+
+.menu-hide{
+  transform: translateX(-300px);
+}
+
+//Elements texte
+.text-center{
+  text-align: center;
+}
+
+//Elements formulaires
+.form-error{
+  background: none;
+  border: 3px solid red;
+  border-radius: 30px;
+  li{
+    text-align: left;
+  }
+}
+
+label{
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 5px;
+  padding: 20px 0 5px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.input-text{
+  box-sizing: border-box;
+  outline: none;
+  max-width: 90%;
+  min-width: 320px;
+  height: 40px;
+  text-align: center;
+  color: $secondary;
+  padding: 10px 5px;
+  background: none;
+  border: 3px solid $thirdly;
+  border-radius: 30px;
+}
+
+input[type="submit"]{
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  margin-top: 70px;
+  text-align: center;
+  font-weight: 700;
+  color: $secondary;
+  padding: 7px 10px;
+  background: $thirdly;
+  border-radius: 30px;
+  text-transform: uppercase;
+  border: none;
+}
+
+select{
+  box-sizing: border-box;
+  outline: none;
+  max-width: 90%;
+  min-width: 320px;
+  height: 40px;
+  text-align: center;
+  color: $secondary;
+  padding: 10px 5px;
+  background: none;
+  border: 3px solid $thirdly;
+  border-radius: 30px;
+}
+
+option{
+  color: $primary;
+}
+
+//Elements boutons
+.btn{
+  position: relative;
+  user-select: none;
+  box-sizing: border-box;
+  height: 40px;
+  text-align: center;
+  font-weight: 700;
+  color: $secondary;
+  padding: 8px 12px;
+  margin: 10px;
+  background: $thirdly;
+  border-radius: 30px;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  opacity: 0.85;
+}
+a.btn{
+  text-decoration: none;
+}
+.btn:hover {
+  opacity: 1;
+}
+.btn-red{
+  background: #9C0D38;
+}
+.btn-blue{
+  background: #01BAEF;
+}
+.btn-green{
+  background: #20BF55;
+}
+
+//Elements tableau
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+thead{
+  font-weight: 700;
+  background: rgba(0,0,0,0.2)
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+td.centeredTd{
+  text-align: center;
+}
+td.checkbox{
+  width: 20px;
+}
+tr:nth-child(even){background: rgba(0,0,0,0.1)}
+tr:hover{
+  background: rgba(0,0,0,0.15)
+}
+//Images du trombi
+.img-trombi{
+  @include span(2);
+  img{
+    width: 100%;
+    max-width: 240px;
+    max-height: 240px;
+    border-radius: 100%;
+    border: 3px solid $thirdly;
+  }
+}
