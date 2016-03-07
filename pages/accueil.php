@@ -4,7 +4,6 @@
 			require 'inc/bootstrap.php';
 			setlocale(LC_TIME, 'fra_fra');
 			Auth::loggedOnly();
-		var_dump($_SESSION['auth']);
 		?>
 		<div class="box-v-align">
 			<p>

@@ -27,4 +27,10 @@ class Database{
         $req->execute();
         return true;
     }
+
+    public function insert($query){
+        $req = $this->pdo->prepare($query);
+        $req->execute();
+        return true;
+    }
 }

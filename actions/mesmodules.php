@@ -41,4 +41,5 @@ if($_POST && isset($_POST['idMod'])){
     foreach($_POST['idMod'] AS $k){
         $modules = $db->delete("DELETE FROM modules_has_utilisateurs WHERE utilisateurs_idutilisateurs = $userId AND modules_idmodules = $k");
     }
+    header('Location: mesmodules');
 }

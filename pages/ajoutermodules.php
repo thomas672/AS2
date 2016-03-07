@@ -11,11 +11,11 @@
 	<form action="#" method="get">
 		<div class="input">
 			<label for="email">Code</label>
-			<input class="input-text" type="text" id="code" name="code" placeholder="Ex: 1KEG2D15">
+			<input class="input-text autocompletAjoutmodule" type="text" id="code" name="code" placeholder="Ex: 1KEG2D15">
 		</div>
 		<div class="input">
 			<label for="email">Nom</label>
-			<input class="input-text" type="text" id="nom" name="nom" placeholder="Ex: Infographie">
+			<input class="input-text autocompletAjoutmodule" type="text" id="nom" name="nom" placeholder="Ex: Infographie">
 		</div>
 		<div class="input">
 			<label for="dpt">DEPARTEMENT</label>
@@ -41,11 +41,11 @@
 				?>
 			</select>
 		</div>
-		<div class="menu-right">
-			<button type="submit" class="btn btn-green"><i class="fa fa-plus-square"></i> AJOUTER</button>
+		<div class="menu-left">
+			<button type="submit" class="btn"><i class="fa fa-plus-square"></i> RECHERCHER</button>
 		</div>
 	</form>
-	<form action="mesmodules" method="post">
+	<form action="ajoutermodules" method="post">
 		<div class="menu-right">
 			<button type="submit" class="btn btn-green"><i class="fa fa-plus-square"></i> AJOUTER</button>
 		</div>
