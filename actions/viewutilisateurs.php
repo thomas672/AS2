@@ -59,7 +59,7 @@ foreach($rangs AS $rang){
             <td>$user->nomutilisateurs</td>
             <td>$user->emailutilisateurs</td>
             <td class='centeredTd'><a href='utilisateurs?idDELL=$user->idutilisateurs' alt='Supprimer l\'utilisateur' class='text-color-thirdly'><i class=\"fa fa-user-times fa-2x\"></i></a></td>
-            <td class='centeredTd'><a href='' alt='Modifier l\'utilisateur' class='text-color-thirdly'><i class=\"fa fa-wrench fa-2x\"></i></a></td>
+            <td class='centeredTd'><a href='modifierutilisateur?idUser=$user->idutilisateurs' alt='Modifier l\'utilisateur' class='text-color-thirdly'><i class=\"fa fa-wrench fa-2x\"></i></a></td>
         </tr>";
     }
 }

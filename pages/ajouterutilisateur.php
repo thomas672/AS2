@@ -68,7 +68,7 @@
 					$headers .= 'From: AppSense(No-reply) < noreply@appsense.com >'. "\r\n";
 
 					// Envoi et verification
-					$mailSend = mail($to, $subject, $message, $headers);;
+					$mailSend = mail($to, $subject, $message, $headers);
 					if(!$mailSend) {
 						echo "<p class='text-color-red'>Echec d'envoi de l'e-mail.</p>";
 					} else {

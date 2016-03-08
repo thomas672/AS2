@@ -33,4 +33,10 @@ class Database{
         $req->execute();
         return true;
     }
+
+    public function update($query){
+        $req = $this->pdo->prepare($query);
+        $req->execute();
+        return true;
+    }
 }

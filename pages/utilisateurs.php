@@ -7,11 +7,12 @@
 
 			<table border="none" width="100%">
 				<thead>
-					<th>
-						<td>NOM</td>
-						<td>EMAIL</td>
-						<td colspan="2">RANG</td>
-					</th>
+					<tr>
+						<th></th>
+						<th>NOM</th>
+						<th>EMAIL</th>
+						<th colspan="2">RANG</th>
+					</tr>
 				<thead>
 			<tbody>
 				<?php

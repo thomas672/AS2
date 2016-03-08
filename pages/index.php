@@ -3,7 +3,7 @@
             <div class="box-v-align">
                 <img src="etc/logo.svg" width="180">
                 <?php
-                require 'actions/connexion.php';
+                    require 'actions/connexion.php';
                 ?>
                 <form action="index" method="post">
                     <div class="input">
