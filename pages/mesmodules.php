@@ -13,6 +13,7 @@
 			<table border="none" width="100%">
 				<thead>
 					<th>
+						<td></td>
 						<td>CODE</td>
 						<td>NOM</td>
 						<td>DPT</td>

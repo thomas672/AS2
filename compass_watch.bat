@@ -1,1 +1,1 @@
-compass watch C:\wamp\www\Appsense
+compass watch C:\wamp\www\AS2

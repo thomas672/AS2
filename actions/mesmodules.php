@@ -28,7 +28,7 @@ if(empty($modules)){
 
 //on affiches les TD des modules
 foreach($modules as $module){
-        echo "<tr>
+    echo "<tr>
             <td class='centeredTd checkbox'><input type='checkbox' name='idMod[]' value='$module->idmodules'></td>
             <td>$module->codemodules</td>
             <td>$module->nommodules</td>

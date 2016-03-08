@@ -7,7 +7,9 @@
 $primary: #33333B; 
 $secondary: #F4F4F6;
 $thirdly: #FF9B41;
-
+$red: #9C0D38;
+$blue: #01BAEF;
+$green: #20BF55;
 
 //Configuration du framework Susy plus d'informations : susy.oddbird.net
 $susy: (
@@ -48,6 +50,7 @@ body{
 
 header{
   @include span(12);
+  background: $primary;
   padding: 10px 18px 10px 18px;
   height: 50px;
   box-sizing: border-box;
@@ -128,6 +131,18 @@ header{
   text-align: center;
 }
 
+.text-color-thirdly{
+  color: $thirdly;
+}
+
+.text-color-red{
+  color: $red;
+}
+
+.text-color-green{
+  color: $green;
+}
+
 //Elements formulaires
 .form-error{
   background: none;
@@ -198,6 +213,7 @@ option{
 //Elements boutons
 .btn{
   position: relative;
+  display: inline-block;
   user-select: none;
   box-sizing: border-box;
   height: 40px;
@@ -220,13 +236,13 @@ a.btn{
   opacity: 1;
 }
 .btn-red{
-  background: #9C0D38;
+  background: $red;
 }
 .btn-blue{
-  background: #01BAEF;
+  background: $blue;
 }
 .btn-green{
-  background: #20BF55;
+  background: $green;
 }
 
 //Elements tableau

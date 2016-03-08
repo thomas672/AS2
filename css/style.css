@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,400italic,300italic);
-/* line 20, ../sass/style.scss */
+/* line 22, ../sass/style.scss */
 body {
   background: #33333B;
   color: #F4F4F6;
@@ -7,7 +7,7 @@ body {
   margin: 0;
 }
 
-/* line 27, ../sass/style.scss */
+/* line 29, ../sass/style.scss */
 .content {
   margin-top: 60px;
   box-sizing: border-box;
@@ -21,31 +21,32 @@ body {
   display: block;
   clear: both;
 }
-/* line 31, ../sass/style.scss */
+/* line 33, ../sass/style.scss */
 .content .sidebar {
   width: 40.67797%;
   float: left;
   margin-right: 1.69492%;
 }
 
-/* line 38, ../sass/style.scss */
+/* line 40, ../sass/style.scss */
 .vertical-align {
   display: flex;
   min-height: 100vh;
 }
 
-/* line 42, ../sass/style.scss */
+/* line 44, ../sass/style.scss */
 .box-v-align {
   margin: auto;
   display: block;
 }
 
-/* line 49, ../sass/style.scss */
+/* line 51, ../sass/style.scss */
 header {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
+  background: #33333B;
   padding: 10px 18px 10px 18px;
   height: 50px;
   box-sizing: border-box;
@@ -54,24 +55,24 @@ header {
   left: 0;
   right: 0;
 }
-/* line 58, ../sass/style.scss */
+/* line 61, ../sass/style.scss */
 header a {
   color: #FF9B41;
 }
 
-/* line 63, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 .menu-left {
   float: left;
   height: 100%;
 }
 
-/* line 67, ../sass/style.scss */
+/* line 70, ../sass/style.scss */
 .menu-right {
   float: right;
   height: 100%;
 }
 
-/* line 73, ../sass/style.scss */
+/* line 76, ../sass/style.scss */
 .sidebar {
   width: 300px;
   max-width: 300px;
@@ -82,12 +83,12 @@ header a {
   background: #1b1b21;
   transition: all 500ms ease;
 }
-/* line 82, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 .sidebar ul {
   width: 100%;
   padding: 0;
 }
-/* line 85, ../sass/style.scss */
+/* line 88, ../sass/style.scss */
 .sidebar ul li {
   width: 100%;
   list-style: none;
@@ -99,7 +100,7 @@ header a {
   box-sizing: border-box;
   border-top: 1px solid #636262;
 }
-/* line 95, ../sass/style.scss */
+/* line 98, ../sass/style.scss */
 .sidebar ul li a {
   text-align: left;
   width: 100%;
@@ -109,46 +110,61 @@ header a {
   font-weight: 400;
   text-decoration: none;
 }
-/* line 103, ../sass/style.scss */
+/* line 106, ../sass/style.scss */
 .sidebar ul li a i {
   margin-right: 10px;
 }
-/* line 108, ../sass/style.scss */
+/* line 111, ../sass/style.scss */
 .sidebar ul li:first-child {
   border-top: none;
   padding-bottom: 30px;
 }
-/* line 112, ../sass/style.scss */
+/* line 115, ../sass/style.scss */
 .sidebar ul li:last-child {
   border-bottom: 1px solid #636262;
 }
-/* line 115, ../sass/style.scss */
+/* line 118, ../sass/style.scss */
 .sidebar ul li:hover {
   background: rgba(0, 0, 0, 0.1);
 }
 
-/* line 122, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 .menu-hide {
   transform: translateX(-300px);
 }
 
-/* line 127, ../sass/style.scss */
+/* line 130, ../sass/style.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 132, ../sass/style.scss */
+/* line 134, ../sass/style.scss */
+.text-color-thirdly {
+  color: #FF9B41;
+}
+
+/* line 138, ../sass/style.scss */
+.text-color-red {
+  color: #9C0D38;
+}
+
+/* line 142, ../sass/style.scss */
+.text-color-green {
+  color: #20BF55;
+}
+
+/* line 147, ../sass/style.scss */
 .form-error {
   background: none;
   border: 3px solid red;
   border-radius: 30px;
 }
-/* line 136, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 .form-error li {
   text-align: left;
 }
 
-/* line 141, ../sass/style.scss */
+/* line 156, ../sass/style.scss */
 label {
   box-sizing: border-box;
   display: block;
@@ -159,7 +175,7 @@ label {
   text-transform: uppercase;
 }
 
-/* line 151, ../sass/style.scss */
+/* line 166, ../sass/style.scss */
 .input-text {
   box-sizing: border-box;
   outline: none;
@@ -174,7 +190,7 @@ label {
   border-radius: 30px;
 }
 
-/* line 165, ../sass/style.scss */
+/* line 180, ../sass/style.scss */
 input[type="submit"] {
   box-sizing: border-box;
   width: 100%;
@@ -190,7 +206,7 @@ input[type="submit"] {
   border: none;
 }
 
-/* line 180, ../sass/style.scss */
+/* line 195, ../sass/style.scss */
 select {
   box-sizing: border-box;
   outline: none;
@@ -205,14 +221,15 @@ select {
   border-radius: 30px;
 }
 
-/* line 194, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
 option {
   color: #33333B;
 }
 
-/* line 199, ../sass/style.scss */
+/* line 214, ../sass/style.scss */
 .btn {
   position: relative;
+  display: inline-block;
   user-select: none;
   box-sizing: border-box;
   height: 40px;
@@ -229,76 +246,76 @@ option {
   opacity: 0.85;
 }
 
-/* line 216, ../sass/style.scss */
+/* line 232, ../sass/style.scss */
 a.btn {
   text-decoration: none;
 }
 
-/* line 219, ../sass/style.scss */
+/* line 235, ../sass/style.scss */
 .btn:hover {
   opacity: 1;
 }
 
-/* line 222, ../sass/style.scss */
+/* line 238, ../sass/style.scss */
 .btn-red {
   background: #9C0D38;
 }
 
-/* line 225, ../sass/style.scss */
+/* line 241, ../sass/style.scss */
 .btn-blue {
   background: #01BAEF;
 }
 
-/* line 228, ../sass/style.scss */
+/* line 244, ../sass/style.scss */
 .btn-green {
   background: #20BF55;
 }
 
-/* line 233, ../sass/style.scss */
+/* line 249, ../sass/style.scss */
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
-/* line 237, ../sass/style.scss */
+/* line 253, ../sass/style.scss */
 thead {
   font-weight: 700;
   background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 242, ../sass/style.scss */
+/* line 258, ../sass/style.scss */
 th, td {
   text-align: left;
   padding: 8px;
 }
 
-/* line 246, ../sass/style.scss */
+/* line 262, ../sass/style.scss */
 td.centeredTd {
   text-align: center;
 }
 
-/* line 249, ../sass/style.scss */
+/* line 265, ../sass/style.scss */
 td.checkbox {
   width: 20px;
 }
 
-/* line 252, ../sass/style.scss */
+/* line 268, ../sass/style.scss */
 tr:nth-child(even) {
   background: rgba(0, 0, 0, 0.1);
 }
 
-/* line 253, ../sass/style.scss */
+/* line 269, ../sass/style.scss */
 tr:hover {
   background: rgba(0, 0, 0, 0.15);
 }
 
-/* line 257, ../sass/style.scss */
+/* line 273, ../sass/style.scss */
 .img-trombi {
   width: 15.25424%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 259, ../sass/style.scss */
+/* line 275, ../sass/style.scss */
 .img-trombi img {
   width: 100%;
   max-width: 240px;

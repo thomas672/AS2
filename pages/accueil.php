@@ -15,7 +15,7 @@
 				<li>Une vue direct des quotas d'abstention</li>
 				<li>Un trombinoscope complet</li>
 			</ul>
-			L'accès à AppSense, se fait grâce à votre adresse e-mail UL et d'un mot de passe aléatoir modifiable par la suite.<br>
+			L'accès à AppSense, se fait grâce à votre adresse e-mail UL et d'un mot de passe aléatoire modifiable par la suite.<br>
 			Pour les obtenir, consulter le secrétariat de votre département.<br>
 			</p>
 			<p>
