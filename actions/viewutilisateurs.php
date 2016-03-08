@@ -58,7 +58,7 @@ foreach($rangs AS $rang){
             <td class='centeredTd'>$user->idutilisateurs</td>
             <td>$user->nomutilisateurs</td>
             <td>$user->emailutilisateurs</td>
-            <td class='centeredTd'><a href='' alt='Supprimer l\'utilisateur' class='text-color-thirdly'><i class=\"fa fa-user-times fa-2x\"></i></a></td>
+            <td class='centeredTd'><a href='utilisateurs?idDELL=$user->idutilisateurs' alt='Supprimer l\'utilisateur' class='text-color-thirdly'><i class=\"fa fa-user-times fa-2x\"></i></a></td>
             <td class='centeredTd'><a href='' alt='Modifier l\'utilisateur' class='text-color-thirdly'><i class=\"fa fa-wrench fa-2x\"></i></a></td>
         </tr>";
     }
@@ -66,9 +66,8 @@ foreach($rangs AS $rang){
 
 
 //ON supprime en cas de demande de supression
-if($_POST && isset($_POST['idMod'])){
-    foreach($_POST['idMod'] AS $k){
-        $modules = $db->delete("DELETE FROM modules_has_utilisateurs WHERE utilisateurs_idutilisateurs = $userId AND modules_idmodules = $k");
-    }
-    header('Location: mesmodules');
+if($_GET && isset($_GET['idDELL'])){
+    $idUserDell = $_GET['idDELL'];
+    $modules = $db->delete("DELETE FROM utilisateurs WHERE idutilisateurs = $idUserDell");
+    header('Location: utilisateurs');
 }

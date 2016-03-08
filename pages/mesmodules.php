@@ -10,15 +10,15 @@
 			<button type="submit" class="btn btn-red"><i class="fa fa-trash"></i> SUPPRIMER</button>
 			<button type="reset" class="btn btn-blue"><i class="fa fa-undo"></i> DESELCTIONNER</button>
 		</div>
-			<table border="none" width="100%">
-				<thead>
-					<th>
-						<td></td>
-						<td>CODE</td>
-						<td>NOM</td>
-						<td>DPT</td>
-					</th>
-				<thead>
+		<table border="none" width="100%">
+			<thead>
+				<tr>
+					<th></th>
+					<th>CODE</th>
+					<th>NOM</th>
+					<th>DPT</th>
+				</tr>
+			</thead>
 			<tbody>
 				<?php
 					include('actions/mesmodules.php');

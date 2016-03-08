@@ -14,32 +14,36 @@
 		<?php
 		if(isset($_POST['nom']) AND isset($_POST['email'])){
 			if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-				$nom = $_POST['nom'];
-				$email = $_POST['email'];
-				$rang = $_POST['rang'];
-				$nb_car = 8;
-				$chaine = 'azertyuiopqsdfghjklmwxcvbn123456789';
-				$nb_lettres = strlen($chaine) - 1;
-				$generation = '';
-				for($i=0; $i < $nb_car; $i++)
-				{
-					$pos = mt_rand(0, $nb_lettres);
-					$car = $chaine[$pos];
-					$generation .= $car;
-				}
-				$password=  $generation;
+				$userExiste = $db->query('SELECT COUNT(*) AS count FROM utilisateurs WHERE emailutilisateurs LIKE "%'.$_POST["email"].'%"')->fetch();
+				if($userExiste->count >= 1){
+					echo "<p class='text-color-red'>E-Mail déjà enregistré.</p>";
+				}else{
+					$nom = $_POST['nom'];
+					$email = $_POST['email'];
+					$rang = $_POST['rang'];
+					$nb_car = 8;
+					$chaine = 'azertyuiopqsdfghjklmwxcvbn123456789';
+					$nb_lettres = strlen($chaine) - 1;
+					$generation = '';
+					for($i=0; $i < $nb_car; $i++)
+					{
+						$pos = mt_rand(0, $nb_lettres);
+						$car = $chaine[$pos];
+						$generation .= $car;
+					}
+					$password=  password_hash($generation, PASSWORD_BCRYPT);
 
-				// Plusieurs destinataires
-				$to  = $_POST['email'];
+					// Plusieurs destinataires
+					$to  = $_POST['email'];
 
-				// Sujet
-				$subject = 'Création d\'utilisateur sur AppSense';
+					// Sujet
+					$subject = 'Création d\'utilisateur sur AppSense';
 
-				// message
-				$message = "
+					// message
+					$message = "
 					 <html>
 					  <head>
-					   <title>Création d\'utilisateur sur AppSense</title>
+					   <title>Création d'utilisateur sur AppSense</title>
 					  </head>
 					  <body>
 						<h4>AppSense</h4>
@@ -47,32 +51,31 @@
 						<p>
 					   		<ul>
 					   			<li>Votre id de connexion : $email </li>
-					   			<li>Votre mot de passe: $password</li>
+					   			<li>Votre mot de passe: $generation</li>
 							</ul>
-							(Vous pouvez à tous moments changer de mot de passe de l\'onglet <i>Mon Profil</i> du site AppSense)
+							(Vous pouvez à tous moments changer de mot de passe de l'onglet <i>Mon Profil</i> du site AppSense)
 						</p>
 					  </body>
 					 </html>
 				 ";
 
-				// Pour envoyer un mail HTML, l'en-tête Content-type doit être défini
-				$headers  = 'MIME-Version: 1.0' . "\r\n";
-				$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+					// Pour envoyer un mail HTML, l'en-tête Content-type doit être défini
+					$headers  = 'MIME-Version: 1.0' . "\r\n";
+					$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
-				// En-têtes additionnels
-				$headers .= 'To: $_POST["nom"] <$_POST["email"]>' . "\r\n";
-				$headers .= 'From: AppSense(No-reply) < noreply@appsense.com >'. "\r\n";
+					// En-têtes additionnels
+					$headers .= "To: $nom <$email>" . "\r\n";
+					$headers .= 'From: AppSense(No-reply) < noreply@appsense.com >'. "\r\n";
 
-				// Envoi et verification
-				$mailSend = mail($to, $subject, $message, $headers);;
-				if(!$mailSend) {
-					echo "<p class='text-color-red'>Echec d'envoi de l'e-mail.</p>";
-				} else {
-					$addmodule = $db->insert("
-						INSERT INTO utilisateurs (nomutilisateurs, emailutilisateurs, passwordutilisateurs, rang_idrang)
-						VALUES ($nom, $email, $password, $rang])
-					");
-					echo '<p class="text-color-green">Utilisateur ajouté ! Mot de passe généré : '.$password.'</p>';
+					// Envoi et verification
+					$mailSend = mail($to, $subject, $message, $headers);;
+					if(!$mailSend) {
+						echo "<p class='text-color-red'>Echec d'envoi de l'e-mail.</p>";
+					} else {
+						$addmodule = $db->insert("INSERT INTO `appsense`.`utilisateurs` (`idutilisateurs`, `nomutilisateurs`, `emailutilisateurs`, `passwordutilisateurs`, `rang_idrang`)
+						VALUES (NULL, '$nom', '$email', '$password', '$rang');");
+						echo '<p class="text-color-green">Utilisateur ajouté ! Mot de passe généré : '.$generation.'</p>';
+					}
 				}
 			}
 			else{

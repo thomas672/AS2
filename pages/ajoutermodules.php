@@ -49,14 +49,15 @@
 		<div class="menu-right">
 			<button type="submit" class="btn btn-green"><i class="fa fa-plus-square"></i> AJOUTER</button>
 		</div>
-			<table border="none" width="100%">
-				<thead>
-					<th>
-						<td>CODE</td>
-						<td>NOM</td>
-						<td>DPT</td>
-					</th>
-				<thead>
+		<table border="none" width="100%">
+			<thead>
+				<tr>
+					<th> </th>
+					<th>CODE</th>
+					<th>NOM</th>
+					<th>DPT</th>
+				</tr>
+			<thead>
 			<tbody>
 				<?php
 					include('actions/ajoutermodules.php');
