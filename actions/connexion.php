@@ -26,6 +26,9 @@ if(!empty($_POST) && !empty($_POST['email']) && !empty($_POST['password'])){
     }else if(password_verify($password, $emailReq->passwordutilisateurs)){
         //S'il n'y a aucunes erreurs on lance la connexion
         $_SESSION['auth'] = $emailReq;
+        $userId = $emailReq->idutilisateurs;
+        $userIp = $_SERVER["REMOTE_ADDR"];
+        $logAdd = $db->query("INSERT INTO `appsense`.`log_connexion` (`idlog_connexion`, `idutilisateurlog_connexion`, `iplog_connexion`, `datelog_connexion`) VALUES (NULL, '$userId', '$userIp', NOW());");
         header('Location: accueil');
         exit();
     }else{

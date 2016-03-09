@@ -77,7 +77,31 @@
 			<button type="submit" class="btn"><i class="fa fa-plus-square"></i> AJOUTER</button>
 		</div>
 		<?php
+			$logconnexion = $db->query("SELECT * FROM `log_connexion` WHERE `idlog_connexion` = $userInfo->idutilisateurs LIMIT 0,20")->fetchAll();
+
+		?>
+		<table border="none" width="100%">
+			<thead>
+			<tr>
+				<th>IP</th>
+				<th>DATE</th>
+			</tr>
+			</thead>
+			<tbody>
+
+		<?php
+			foreach($logconnexion AS $log){
+				echo "
+					<tr>
+						<td>$log->iplog_connexion</td>
+						<td>$log->datelog_connexion</td>
+					</tr>
+				";
+			}
 		}
 		?>
+
+			</tbody>
+		</table>
 	</form>
 </div>

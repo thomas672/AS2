@@ -23,7 +23,7 @@ if(empty($rangs)){
             <td></td>
             <td>/</td>
             <td class='centeredTd'><p style=\"color: darkred\">Erreur avec les rangs.</p></td>
-            <td>/</td>
+            <td colspan=\"2\">/</td>
         </tr>";
 }
 
@@ -31,10 +31,7 @@ if(empty($rangs)){
 foreach($rangs AS $rang){
     //On affiche la ligne pour indiqué le rang
     echo "<tr>
-            <td class='centeredTd checkbox'><strong>$rang->nomrang</strong></td>
-            <td><hr></td>
-            <td><hr></td>
-            <td class='centeredTd' colspan=\"2\">$rang->idrang</td>
+            <td class='centeredTd checkbox' colspan=\"5\"><strong>$rang->nomrang</strong></td>
         </tr>";
     //On charge les utilisateurs du rang en question
     $users = $db->query("
@@ -45,10 +42,7 @@ foreach($rangs AS $rang){
 
     if(empty($users)){
         echo "<tr>
-            <td></td>
-            <td>/</td>
-            <td class='centeredTd'><p style=\"color: darkred\">Pas d'utilisateurs.</p></td>
-            <td>/</td>
+            <td class='centeredTd' colspan=\"5\"><p style=\"color: darkred\">Pas d'utilisateurs.</p></td>
         </tr>";
     }
 

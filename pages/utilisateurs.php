@@ -11,7 +11,7 @@
 						<th></th>
 						<th>NOM</th>
 						<th>EMAIL</th>
-						<th colspan="2">RANG</th>
+						<th colspan="2">GESTION</th>
 					</tr>
 				<thead>
 			<tbody>
