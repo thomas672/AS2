@@ -9,8 +9,9 @@ body {
 
 /* line 29, ../sass/style.scss */
 .content {
-  margin-top: 60px;
+  padding-top: 60px;
   box-sizing: border-box;
+  height-min: 100%;
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
@@ -21,26 +22,30 @@ body {
   display: block;
   clear: both;
 }
-/* line 33, ../sass/style.scss */
+/* line 34, ../sass/style.scss */
 .content .sidebar {
   width: 40.67797%;
   float: left;
   margin-right: 1.69492%;
 }
 
-/* line 40, ../sass/style.scss */
+/* line 41, ../sass/style.scss */
 .vertical-align {
   display: flex;
-  min-height: 100vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-/* line 44, ../sass/style.scss */
+/* line 49, ../sass/style.scss */
 .box-v-align {
   margin: auto;
   display: block;
 }
 
-/* line 51, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
 header {
   width: 100%;
   float: left;
@@ -55,24 +60,24 @@ header {
   left: 0;
   right: 0;
 }
-/* line 61, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 header a {
   color: #FF9B41;
 }
 
-/* line 66, ../sass/style.scss */
+/* line 71, ../sass/style.scss */
 .menu-left {
   float: left;
   height: 100%;
 }
 
-/* line 70, ../sass/style.scss */
+/* line 75, ../sass/style.scss */
 .menu-right {
   float: right;
   height: 100%;
 }
 
-/* line 76, ../sass/style.scss */
+/* line 81, ../sass/style.scss */
 .sidebar {
   width: 300px;
   max-width: 300px;
@@ -83,12 +88,12 @@ header a {
   background: #1b1b21;
   transition: all 500ms ease;
 }
-/* line 85, ../sass/style.scss */
+/* line 90, ../sass/style.scss */
 .sidebar ul {
   width: 100%;
   padding: 0;
 }
-/* line 88, ../sass/style.scss */
+/* line 93, ../sass/style.scss */
 .sidebar ul li {
   width: 100%;
   list-style: none;
@@ -100,7 +105,7 @@ header a {
   box-sizing: border-box;
   border-top: 1px solid #636262;
 }
-/* line 98, ../sass/style.scss */
+/* line 103, ../sass/style.scss */
 .sidebar ul li a {
   text-align: left;
   width: 100%;
@@ -110,61 +115,61 @@ header a {
   font-weight: 400;
   text-decoration: none;
 }
-/* line 106, ../sass/style.scss */
+/* line 111, ../sass/style.scss */
 .sidebar ul li a i {
   margin-right: 10px;
 }
-/* line 111, ../sass/style.scss */
+/* line 116, ../sass/style.scss */
 .sidebar ul li:first-child {
   border-top: none;
   padding-bottom: 30px;
 }
-/* line 115, ../sass/style.scss */
+/* line 120, ../sass/style.scss */
 .sidebar ul li:last-child {
   border-bottom: 1px solid #636262;
 }
-/* line 118, ../sass/style.scss */
+/* line 123, ../sass/style.scss */
 .sidebar ul li:hover {
   background: rgba(0, 0, 0, 0.1);
 }
 
-/* line 125, ../sass/style.scss */
+/* line 130, ../sass/style.scss */
 .menu-hide {
   transform: translateX(-300px);
 }
 
-/* line 130, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 134, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .text-color-thirdly {
   color: #FF9B41;
 }
 
-/* line 138, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 .text-color-red {
   color: #9C0D38;
 }
 
-/* line 142, ../sass/style.scss */
+/* line 147, ../sass/style.scss */
 .text-color-green {
   color: #20BF55;
 }
 
-/* line 147, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 .form-error {
   background: none;
   border: 3px solid red;
   border-radius: 30px;
 }
-/* line 151, ../sass/style.scss */
+/* line 156, ../sass/style.scss */
 .form-error li {
   text-align: left;
 }
 
-/* line 156, ../sass/style.scss */
+/* line 161, ../sass/style.scss */
 label {
   box-sizing: border-box;
   display: block;
@@ -175,7 +180,7 @@ label {
   text-transform: uppercase;
 }
 
-/* line 166, ../sass/style.scss */
+/* line 171, ../sass/style.scss */
 .input-text {
   box-sizing: border-box;
   outline: none;
@@ -190,7 +195,7 @@ label {
   border-radius: 30px;
 }
 
-/* line 180, ../sass/style.scss */
+/* line 185, ../sass/style.scss */
 input[type="submit"] {
   box-sizing: border-box;
   width: 100%;
@@ -206,7 +211,7 @@ input[type="submit"] {
   border: none;
 }
 
-/* line 195, ../sass/style.scss */
+/* line 200, ../sass/style.scss */
 select {
   box-sizing: border-box;
   outline: none;
@@ -221,12 +226,12 @@ select {
   border-radius: 30px;
 }
 
-/* line 209, ../sass/style.scss */
+/* line 214, ../sass/style.scss */
 option {
   color: #33333B;
 }
 
-/* line 214, ../sass/style.scss */
+/* line 219, ../sass/style.scss */
 .btn {
   position: relative;
   display: inline-block;
@@ -246,76 +251,76 @@ option {
   opacity: 0.85;
 }
 
-/* line 232, ../sass/style.scss */
+/* line 237, ../sass/style.scss */
 a.btn {
   text-decoration: none;
 }
 
-/* line 235, ../sass/style.scss */
+/* line 240, ../sass/style.scss */
 .btn:hover {
   opacity: 1;
 }
 
-/* line 238, ../sass/style.scss */
+/* line 243, ../sass/style.scss */
 .btn-red {
   background: #9C0D38;
 }
 
-/* line 241, ../sass/style.scss */
+/* line 246, ../sass/style.scss */
 .btn-blue {
   background: #01BAEF;
 }
 
-/* line 244, ../sass/style.scss */
+/* line 249, ../sass/style.scss */
 .btn-green {
   background: #20BF55;
 }
 
-/* line 249, ../sass/style.scss */
+/* line 254, ../sass/style.scss */
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
-/* line 253, ../sass/style.scss */
+/* line 258, ../sass/style.scss */
 thead {
   font-weight: 700;
   background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 258, ../sass/style.scss */
+/* line 263, ../sass/style.scss */
 th, td {
   text-align: left;
   padding: 8px;
 }
 
-/* line 262, ../sass/style.scss */
+/* line 267, ../sass/style.scss */
 td.centeredTd {
   text-align: center;
 }
 
-/* line 265, ../sass/style.scss */
+/* line 270, ../sass/style.scss */
 td.checkbox {
   width: 20px;
 }
 
-/* line 268, ../sass/style.scss */
+/* line 273, ../sass/style.scss */
 tr:nth-child(even) {
   background: rgba(0, 0, 0, 0.1);
 }
 
-/* line 269, ../sass/style.scss */
+/* line 274, ../sass/style.scss */
 tr:hover {
   background: rgba(0, 0, 0, 0.15);
 }
 
-/* line 273, ../sass/style.scss */
+/* line 278, ../sass/style.scss */
 .img-trombi {
   width: 15.25424%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 275, ../sass/style.scss */
+/* line 280, ../sass/style.scss */
 .img-trombi img {
   width: 100%;
   max-width: 240px;

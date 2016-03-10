@@ -74,12 +74,13 @@
 		</div>
 
 		<div>
-			<button type="submit" class="btn"><i class="fa fa-plus-square"></i> AJOUTER</button>
+			<button type="submit" class="btn"><i class="fa fa-plus-square"></i> METTRE A JOUR</button>
 		</div>
 		<?php
-			$logconnexion = $db->query("SELECT * FROM `log_connexion` WHERE `idlog_connexion` = $userInfo->idutilisateurs LIMIT 0,20")->fetchAll();
+			$logconnexion = $db->query("SELECT * FROM `log_connexion` WHERE `idutilisateurlog_connexion` = $userInfo->idutilisateurs ORDER BY idlog_connexion DESC LIMIT 0,20")->fetchAll();
 
 		?>
+		<h1>Historique de connexion : </h1>
 		<table border="none" width="100%">
 			<thead>
 			<tr>
