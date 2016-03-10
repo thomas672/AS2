@@ -11,10 +11,10 @@ RewriteRule article-(.*) article?id=$1
 RewriteEngine on
 RewriteRule upload/alertes/(.*)	watermark.php?id=$1
 
+RewriteRule ^(class)($|/) - [L]
 
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 Options +FollowSymlinks
 RewriteRule ^(.*)$	index.php?p=$1 [QSA,L]
-
