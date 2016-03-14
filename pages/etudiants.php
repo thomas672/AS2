@@ -3,7 +3,7 @@
 	<p>
 		Voici l'ensemble des étudiants de l'IUT de Saint-Dié-des-Vosges.
 	</p>
-	<a href='ajouterutilisateur' class="btn"><i class="fa fa-user-plus"></i> Ajouter un étudiant</a>
+	<a href='ajouteretudiant' class="btn"><i class="fa fa-user-plus"></i> Ajouter un étudiant</a>
 	<h1>Rechercher un étudiant :</h1>
 	<form action="#" method="get">
 		<div class="input">
@@ -34,10 +34,10 @@
 				<?php
 					require 'inc/bootstrap.php';
 					$db = App::getDatabase();
-					$allEtu = $db->query("SELECT * FROM etudiants ORDER BY nometudiants ASC")->fetchAll();
+					$allEtu = $db->query("SELECT * FROM etudiants WHERE actifetudiants = 1 ORDER BY nometudiants ASC")->fetchAll();
 					foreach($allEtu AS $etu){
 						echo "<tr>
-							<td>X | M</td>
+							<td class='centeredTd'><a href='modifieretudiant?id=$etu->idetudiants' class='btn btn-blue'><i class=\"fa fa-pencil\"></i></a> <a href='modifieretudiant?idDELETE=$etu->idetudiants' class='btn btn-red'><i class=\"fa fa-trash-o\"></i></a></td>
 							<td class='centeredTd'>$etu->idetudiants</td>
 							<td>$etu->nometudiants</td>
 							<td>$etu->prenometudiants</td>

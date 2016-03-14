@@ -15,6 +15,7 @@ body {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
+  z-index: 1;
 }
 /* line 12, ../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
 .content:after {
@@ -29,23 +30,19 @@ body {
   margin-right: 1.69492%;
 }
 
-/* line 41, ../sass/style.scss */
+/* line 42, ../sass/style.scss */
 .vertical-align {
   display: flex;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  height: 40vw;
 }
 
-/* line 49, ../sass/style.scss */
+/* line 46, ../sass/style.scss */
 .box-v-align {
   margin: auto;
   display: block;
 }
 
-/* line 56, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 header {
   width: 100%;
   float: left;
@@ -60,24 +57,24 @@ header {
   left: 0;
   right: 0;
 }
-/* line 66, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 header a {
   color: #FF9B41;
 }
 
-/* line 71, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 .menu-left {
   float: left;
   height: 100%;
 }
 
-/* line 75, ../sass/style.scss */
+/* line 72, ../sass/style.scss */
 .menu-right {
   float: right;
   height: 100%;
 }
 
-/* line 81, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 .sidebar {
   width: 300px;
   max-width: 300px;
@@ -87,26 +84,28 @@ header a {
   bottom: 0;
   background: #1b1b21;
   transition: all 500ms ease;
+  z-index: 2;
 }
-/* line 90, ../sass/style.scss */
+/* line 88, ../sass/style.scss */
 .sidebar ul {
   width: 100%;
   padding: 0;
 }
-/* line 93, ../sass/style.scss */
+/* line 91, ../sass/style.scss */
 .sidebar ul li {
   width: 100%;
   list-style: none;
   margin: 0;
   padding: 13px 20px 13px 20px;
   text-align: center;
-  color: #F4F4F6;
+  color: #FF9B41;
   font-weight: 700;
   box-sizing: border-box;
   border-top: 1px solid #636262;
 }
-/* line 103, ../sass/style.scss */
+/* line 101, ../sass/style.scss */
 .sidebar ul li a {
+  color: #F4F4F6;
   text-align: left;
   width: 100%;
   height: 100%;
@@ -115,61 +114,65 @@ header a {
   font-weight: 400;
   text-decoration: none;
 }
-/* line 111, ../sass/style.scss */
+/* line 110, ../sass/style.scss */
 .sidebar ul li a i {
   margin-right: 10px;
 }
-/* line 116, ../sass/style.scss */
+/* line 115, ../sass/style.scss */
+.sidebar ul a.active {
+  color: #FF9B41;
+}
+/* line 118, ../sass/style.scss */
 .sidebar ul li:first-child {
   border-top: none;
   padding-bottom: 30px;
 }
-/* line 120, ../sass/style.scss */
+/* line 122, ../sass/style.scss */
 .sidebar ul li:last-child {
   border-bottom: 1px solid #636262;
 }
-/* line 123, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 .sidebar ul li:hover {
   background: rgba(0, 0, 0, 0.1);
 }
 
-/* line 130, ../sass/style.scss */
+/* line 132, ../sass/style.scss */
 .menu-hide {
   transform: translateX(-300px);
 }
 
-/* line 135, ../sass/style.scss */
+/* line 137, ../sass/style.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 139, ../sass/style.scss */
+/* line 141, ../sass/style.scss */
 .text-color-thirdly {
   color: #FF9B41;
 }
 
-/* line 143, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 .text-color-red {
   color: #9C0D38;
 }
 
-/* line 147, ../sass/style.scss */
+/* line 149, ../sass/style.scss */
 .text-color-green {
   color: #20BF55;
 }
 
-/* line 152, ../sass/style.scss */
+/* line 154, ../sass/style.scss */
 .form-error {
   background: none;
   border: 3px solid red;
   border-radius: 30px;
 }
-/* line 156, ../sass/style.scss */
+/* line 158, ../sass/style.scss */
 .form-error li {
   text-align: left;
 }
 
-/* line 161, ../sass/style.scss */
+/* line 163, ../sass/style.scss */
 label {
   box-sizing: border-box;
   display: block;
@@ -180,7 +183,7 @@ label {
   text-transform: uppercase;
 }
 
-/* line 171, ../sass/style.scss */
+/* line 173, ../sass/style.scss */
 .input-text {
   box-sizing: border-box;
   outline: none;
@@ -195,7 +198,12 @@ label {
   border-radius: 30px;
 }
 
-/* line 185, ../sass/style.scss */
+/* line 186, ../sass/style.scss */
+.input-text:disabled {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* line 189, ../sass/style.scss */
 input[type="submit"] {
   box-sizing: border-box;
   width: 100%;
@@ -211,7 +219,12 @@ input[type="submit"] {
   border: none;
 }
 
-/* line 200, ../sass/style.scss */
+/* line 204, ../sass/style.scss */
+optgroup {
+  color: #33333B;
+}
+
+/* line 208, ../sass/style.scss */
 select {
   box-sizing: border-box;
   outline: none;
@@ -226,12 +239,12 @@ select {
   border-radius: 30px;
 }
 
-/* line 214, ../sass/style.scss */
+/* line 222, ../sass/style.scss */
 option {
   color: #33333B;
 }
 
-/* line 219, ../sass/style.scss */
+/* line 227, ../sass/style.scss */
 .btn {
   position: relative;
   display: inline-block;
@@ -251,76 +264,76 @@ option {
   opacity: 0.85;
 }
 
-/* line 237, ../sass/style.scss */
+/* line 245, ../sass/style.scss */
 a.btn {
   text-decoration: none;
 }
 
-/* line 240, ../sass/style.scss */
+/* line 248, ../sass/style.scss */
 .btn:hover {
   opacity: 1;
 }
 
-/* line 243, ../sass/style.scss */
+/* line 251, ../sass/style.scss */
 .btn-red {
   background: #9C0D38;
 }
 
-/* line 246, ../sass/style.scss */
+/* line 254, ../sass/style.scss */
 .btn-blue {
   background: #01BAEF;
 }
 
-/* line 249, ../sass/style.scss */
+/* line 257, ../sass/style.scss */
 .btn-green {
   background: #20BF55;
 }
 
-/* line 254, ../sass/style.scss */
+/* line 262, ../sass/style.scss */
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
-/* line 258, ../sass/style.scss */
+/* line 266, ../sass/style.scss */
 thead {
   font-weight: 700;
   background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 263, ../sass/style.scss */
+/* line 271, ../sass/style.scss */
 th, td {
   text-align: left;
   padding: 8px;
 }
 
-/* line 267, ../sass/style.scss */
+/* line 275, ../sass/style.scss */
 td.centeredTd {
   text-align: center;
 }
 
-/* line 270, ../sass/style.scss */
+/* line 278, ../sass/style.scss */
 td.checkbox {
   width: 20px;
 }
 
-/* line 273, ../sass/style.scss */
+/* line 281, ../sass/style.scss */
 tr:nth-child(even) {
   background: rgba(0, 0, 0, 0.1);
 }
 
-/* line 274, ../sass/style.scss */
+/* line 282, ../sass/style.scss */
 tr:hover {
   background: rgba(0, 0, 0, 0.15);
 }
 
-/* line 278, ../sass/style.scss */
+/* line 286, ../sass/style.scss */
 .img-trombi {
   width: 15.25424%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 280, ../sass/style.scss */
+/* line 288, ../sass/style.scss */
 .img-trombi img {
   width: 100%;
   max-width: 240px;
