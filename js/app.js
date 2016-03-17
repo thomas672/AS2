@@ -61,13 +61,74 @@ $(function() {
                 $(results).each(function(key, value) {
                     $('#groupeEtu').append(
                         "<tr>"+
-                        "<td class='checkbox'><button class='btn btn-red DellGroupeEtu' id='"+value.idgroupes+"'><i class='fa fa-trash'></i></button></td>"+
-                        "<td class='checkbox'>"+value.idgroupes+"</td>"+
-                        "<td>"+value.nomgroupes+"</td>"+
+                            "<td class='checkbox'><button class='btn btn-red DellGroupeEtu' id='"+value.idgroupes+"'><i class='fa fa-trash'></i></button></td>"+
+                            "<td class='checkbox'>"+value.idgroupes+"</td>"+
+                            "<td>"+value.nomgroupes+"</td>"+
                         "</tr>"
                     );
                 })
             });
         return false;
     });
+    //Fonction pour rechercher les fiches d'absences
+    $('#changeModulesFiches').change(function() {
+        var idModuleFic = $('#changeModulesFiches').val();
+        $.get( "actions/viewfiches.php", { idModuleFic: idModuleFic })
+            .done(function( data ) {
+                var results = jQuery.parseJSON(data);
+                $('#listFiches').empty();
+                $(results).each(function(key, value) {
+                    $('#listFiches').append(
+                        "<tr>"+
+                            "<td><a class='btn btn-red' id='"+value.idAbsences+"'><i class=\"fa fa-pencil\"></i></a></td>"+
+                            "<td>"+value.dateabsences+"</td>"+
+                            "<td>"+value.dureeabsences+"</td>"+
+                        "</tr>"
+                    );
+                })
+            });
+        return false;
+    })
+
+    $('#changeModulesAbsence').change(function() {
+        var idModuleAbs = $('#changeModulesAbsence').val();
+        $.get( "actions/viewfiches.php", { idModuleAbs: idModuleAbs })
+            .done(function( data ) {
+                var results = jQuery.parseJSON(data);
+                $('#hiddenFormDept').fadeIn();
+                $('#changeGroupeAbs').prop('disabled', false);
+                $(results).each(function(key, value) {
+                    $('#departement').html('<option value="'+value.iddepartements+'">'+value.nomdepartements+'</option>');
+                    $('#formation').html('<option value="'+value.idformations+'">'+value.nomformations+'</option>');
+                });
+            });
+        return false;
+    });
+
+    $('#changeGroupeAbs').change(function() {
+        var idGroupes = $('#changeGroupeAbs').val();
+        var idFormations = $('#departement').val();
+        var idDepartements = $('#formation').val();
+        $.get( "actions/viewfiches.php", { idGroupes: idGroupes, idDepartements: idDepartements, idFormations: idFormations })
+            .done(function( data ) {
+                var results = jQuery.parseJSON(data);
+                $('#trombi').empty();
+                $(results).each(function(key, value) {
+                    $('#trombi').append(
+                        '<div class="trombi-block text-center">'+
+                            '<input type="checkbox" name="idEtuAbs[]" id="Etu'+value.idetudiants+'" value="'+value.idetudiants+'" />'+
+                            '<label for="Etu'+value.idetudiants+'">'+
+                                '<img src="etc/trombi/'+value.photourletudiants+'">'+
+                            '</label>'+
+                            '<div class="infoEtu" style="margin-bottom: 10px;">'+
+                                '<strong>'+value.prenometudiants+'</strong><br>'+
+                                '<small>'+value.nometudiants+'</small>'+
+                            '</div>'+
+                        '</div>'
+                    );
+                });
+                $('#hiddenSignature').fadeIn();
+            });
+        return false;
+    })
 });

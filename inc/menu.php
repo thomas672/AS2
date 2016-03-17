@@ -9,6 +9,7 @@
     }
     ?>
     <li><a href="accueil" class="<?php setPageActive($_GET['p'], 'accueil'); ?> "  alt="Accueil"><i class="fa fa-home"></i> Accueil</a></li>
+    <li><a href="fichesabsences" class="<?php setPageActive($_GET['p'], 'fichesabsence'); ?>"  alt="Page des fiches d'absence(s)"><i class="fa fa-sticky-note-o"></i> Fiches absence(s)</a></li>
     <li><a href="mesmodules" class="<?php setPageActive($_GET['p'], 'mesmodules'); ?> <?php setPageActive($_GET['p'], 'ajoutermodules'); ?>"  alt="Page de mes modules"><i class="fa fa-archive"></i> Mes modules</a></li>
     <li><a href="etudiants" class="<?php setPageActive($_GET['p'], 'etudiants'); ?> <?php setPageActive($_GET['p'], 'ajouteretudiant'); ?> <?php setPageActive($_GET['p'], 'ajouteretudiant2'); ?> <?php setPageActive($_GET['p'], 'modifieretudiant'); ?>"  alt="Page des étudiants"><i class="fa fa-graduation-cap"></i> Les étudiants</a></li>
     <li><a href="utilisateurs" class="<?php setPageActive($_GET['p'], 'utilisateurs'); ?> <?php setPageActive($_GET['p'], 'ajouterutilisateur'); ?> <?php setPageActive($_GET['p'], 'modifierutilisateur'); ?>"  alt="Page de gestion des utilisateurs"><i class="fa fa-users"></i> Les utilisateurs</a></li>

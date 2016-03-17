@@ -3,7 +3,7 @@
 	App::needSessionStart();
 	$db = App::getDatabase();
 ?>
-<div class="content" xmlns="http://www.w3.org/1999/html">
+<div class="content">
 	<h1>Ajouter un étudiant : </h1>
 	<p>
 		L'ajout d'étudiant est simpliste quelques informations suffisent pour le système.<br>

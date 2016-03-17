@@ -14,7 +14,7 @@ $green: #20BF55;
 //Configuration du framework Susy plus d'informations : susy.oddbird.net
 $susy: (
         columns: 12,
-        gutters: .25,
+        gutters: .30,
         container: 960px
 );
 
@@ -28,6 +28,8 @@ body{
 
 .content {
   padding-top: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
   box-sizing: border-box;
   height-min: 100%;
   @include container;
@@ -54,12 +56,13 @@ header{
   @include span(12);
   background: $primary;
   padding: 10px 18px 10px 18px;
-  height: 50px;
+  height: 60px;
   box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
   a{
     color: $thirdly;
   }
@@ -84,10 +87,12 @@ header{
   bottom: 0;
   background: #1b1b21;
   transition: all 500ms ease;
-  z-index: 2;
   ul{
     width: 100%;
     padding: 0;
+    display: block;
+    position: relative;
+    z-index: 3;
     li{
       width: 100%;
       list-style: none;
@@ -151,6 +156,15 @@ header{
 }
 
 //Elements formulaires
+form{
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.hidden{
+  display: none;
+}
+
 .form-error{
   background: none;
   border: 3px solid red;
@@ -169,12 +183,22 @@ label{
   font-weight: 700;
   text-transform: uppercase;
 }
+.input{
+  img{
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 3px solid $thirdly;
+    border-radius: 100%;
+  }
+}
 
 .input-text{
   box-sizing: border-box;
   outline: none;
-  max-width: 90%;
-  min-width: 320px;
+  min-width: 90%;
+  display: block;
+  margin: 0 auto;
   height: 40px;
   text-align: center;
   color: $secondary;
@@ -208,8 +232,9 @@ optgroup{
 select{
   box-sizing: border-box;
   outline: none;
-  max-width: 90%;
-  min-width: 320px;
+  min-width: 90%;
+  display: block;
+  margin: 0 auto;
   height: 40px;
   text-align: center;
   color: $secondary;
@@ -218,12 +243,57 @@ select{
   border: 3px solid $thirdly;
   border-radius: 30px;
 }
-
+select:disabled {
+  background: rgba(255,255,255, 0.2);
+}
 option{
   color: $primary;
 }
+//Form trombi absence : gestion des cliques pour selectionner les absents
+
+.trombi{
+  height: auto;
+  @include container;
+  .trombi-block{
+
+    @media (min-width: 400px) {
+      @include gallery(4);
+    }
+    @media (min-width: 600px) {
+      @include gallery(3);
+    }
+    @media (min-width: 960px) {
+      @include gallery(2);
+    }
+  }
+  :checked+label img {
+    border: 3px solid $red;
+    opacity: 0.8;
+  }
+  input[type=checkbox] {
+    display: none;
+  }
+  .infoEtu{
+
+  }
+  img {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 230px;
+    max-height: 230px;
+    border-radius: 100%;
+    border: 3px solid $thirdly;
+
+  }
+  label {
+    display: inline-block;
+  }
+}
 
 //Elements boutons
+
 .btn{
   position: relative;
   display: inline-block;
@@ -261,7 +331,8 @@ a.btn{
 //Elements tableau
 table {
   border-collapse: collapse;
-  width: 100%;
+  width: 99;
+  margin: 0 auto;
 }
 thead{
   font-weight: 700;
@@ -284,11 +355,22 @@ tr:hover{
 }
 //Images du trombi
 .img-trombi{
-  @include span(2);
+  @include gallery(6);
+  @media (min-width: 400px) {
+    @include gallery(4);
+  }
+  @media (min-width: 600px) {
+    @include gallery(3);
+  }
+  @media (min-width: 960px) {
+    @include gallery(2);
+  }
   img{
+    background: black;
+    box-sizing: border-box;
     width: 100%;
-    max-width: 240px;
-    max-height: 240px;
+    max-width: 230px;
+    max-height: 230px;
     border-radius: 100%;
     border: 3px solid $thirdly;
   }

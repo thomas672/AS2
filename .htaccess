@@ -1,17 +1,5 @@
 RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule photos-(.*)	photos?gal_id=$1
-
-RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule article-(.*) article?id=$1
-
-RewriteEngine on
-RewriteRule upload/alertes/(.*)	watermark.php?id=$1
-
-RewriteRule ^(class)($|/) - [L]
+RewriteRule etc/trombi/(.*)	trombi.php?id=$1
 
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
