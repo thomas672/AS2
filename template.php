@@ -15,6 +15,8 @@
     <title>AppSense</title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- On force le mobile a ne pas utiliser le zoom -->
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
     <!-- FAVICON -->
     <link rel="apple-touch-icon" sizes="57x57" href="etc/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="etc/favicon/apple-icon-60x60.png">

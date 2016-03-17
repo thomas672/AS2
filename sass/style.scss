@@ -1,5 +1,6 @@
 //Nos imports
 @import "grids";
+@import "compass";
 //importation de la font OpenSans
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,400italic,300italic');
 
@@ -24,6 +25,13 @@ body{
   color: $secondary;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
+}
+
+//Desactivation d'elements IOS et Android
+input, textarea, select {
+  -webkit-appearance: none;
+  @include border-radius(0);
+  background: none;
 }
 
 .content {
@@ -63,6 +71,7 @@ header{
   left: 0;
   right: 0;
   border-bottom: 1px solid rgba(0,0,0,0.5);
+  z-index: 100;
   a{
     color: $thirdly;
   }
@@ -256,7 +265,7 @@ option{
   @include container;
   .trombi-block{
 
-    @media (min-width: 400px) {
+    @media (min-width: 1px) {
       @include gallery(4);
     }
     @media (min-width: 600px) {
