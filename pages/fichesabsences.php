@@ -42,7 +42,7 @@ $userId = $_SESSION['auth']->idutilisateurs;
 			</select>
 		</div>
 	</form>
-	<script src="js/autocomplete.js" type=""></script>
+	<h2>Fiche(s) absence(s)</h2>
 			<table border="none" width="100%">
 				<thead>
 					<tr>
@@ -52,7 +52,17 @@ $userId = $_SESSION['auth']->idutilisateurs;
 					</tr>
 				<thead>
 			<tbody id="listFiches">
+				<?php
 
+					$meslastfiches = $db->query("SELECT * FROM `absences` WHERE `idutilisateurs_utilisateurs` = $userId ORDER BY dateabsences DESC LIMIT 0,25")->fetchAll();
+					foreach($meslastfiches AS $lastFiche){
+						echo "<tr>".
+							"<td class='centeredTd checkbox'><a class='btn btn-blue' href='showfiche?id=$lastFiche->idabsences'><i class=\"fa fa-pencil\"></i></a></td>".
+							"<td>".$lastFiche->dateabsences."</td>".
+							"<td>".$lastFiche->dureeabsences." heure(s)</td>".
+							"</tr>";
+					}
+				?>
 			</tbody>
 		</table>
 

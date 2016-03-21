@@ -28,10 +28,9 @@ body{
 }
 
 //Desactivation d'elements IOS et Android
-input, textarea, select {
+input[type="submit"], input[type="text"], input[type="email"],input[type="password"], .btn,textarea, select {
   -webkit-appearance: none;
-  @include border-radius(0);
-  background: none;
+  @include border-radius(30px);
 }
 
 .content {
@@ -90,6 +89,7 @@ header{
 .sidebar{
   width: 300px;
   max-width: 300px;
+  z-index: 110;
   position: fixed;
   top: 0;
   right: -300px;
@@ -219,6 +219,21 @@ label{
 .input-text:disabled {
   background: rgba(255,255,255, 0.2);
 }
+
+textarea{
+  box-sizing: border-box;
+  outline: none;
+  min-width: 90%;
+  display: block;
+  margin: 0 auto;
+  text-align: left;
+  color: $secondary;
+  padding: 15px 15px;
+  background: none;
+  border: 3px solid $thirdly;
+  border-radius: 30px;
+}
+
 input[type="submit"]{
   box-sizing: border-box;
   width: 100%;
@@ -234,6 +249,21 @@ input[type="submit"]{
   border: none;
 }
 
+input[type="text"]{
+  box-sizing: border-box;
+  outline: none;
+  min-width: 90%;
+  display: block;
+  margin: 0 auto;
+  height: 40px;
+  text-align: center;
+  color: $secondary;
+  padding: 10px 5px;
+  background: none;
+  border: 3px solid $thirdly;
+  border-radius: 30px;
+}
+
 optgroup{
   color : $primary;
 }
@@ -247,10 +277,11 @@ select{
   height: 40px;
   text-align: center;
   color: $secondary;
-  padding: 10px 5px;
-  background: none;
+  padding: 10px 15px;
   border: 3px solid $thirdly;
   border-radius: 30px;
+  background: url('../etc/arrows.svg') no-repeat right 12px center;
+  background-size: 16px;
 }
 select:disabled {
   background: rgba(255,255,255, 0.2);
@@ -276,7 +307,7 @@ option{
     }
   }
   :checked+label img {
-    border: 3px solid $red;
+    border: 4px solid $red;
     opacity: 0.8;
   }
   input[type=checkbox] {
@@ -293,7 +324,7 @@ option{
     max-width: 230px;
     max-height: 230px;
     border-radius: 100%;
-    border: 3px solid $thirdly;
+    border: 4px solid $thirdly;
 
   }
   label {
@@ -321,7 +352,25 @@ option{
   outline: none;
   opacity: 0.85;
 }
-a.btn{
+.btn-mini{
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  box-sizing: border-box;
+  height: 30px;
+  text-align: center;
+  font-weight: 700;
+  color: $secondary;
+  padding: 5px;
+  margin: 0;
+  background: $thirdly;
+  border-radius: 30px;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  opacity: 0.85;
+}
+a.btn, a.btn-mini{
   text-decoration: none;
 }
 .btn:hover {

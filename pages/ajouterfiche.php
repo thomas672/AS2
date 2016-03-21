@@ -4,13 +4,20 @@ App::needSessionStart();
 $db = App::getDatabase();
 $userId = $_SESSION['auth']->idutilisateurs;
 ?>
+
+<?php
+
+if(isset($_POST['changeGroupeAbs'])){
+    var_dump($_POST);
+}
+?>
 <div class="content" xmlns="http://www.w3.org/1999/html">
     <h1>Ajouter une fiche d'absence(s) : </h1>
     <p>
         Bonjour, <?= $_SESSION['auth']->nomutilisateurs ?> nous sommes le <?php setlocale(LC_TIME, 'fra_fra'); echo strftime('%d %B %Y');?> il est : <?= date('H:i') ?> !<br>
         Veuillez entrer les informations du cours et cliquer sur les étudiants absents. Toute modification(s) sera possible même après l'enregistrement.
     </p>
-    <form action="ajouterfiche" method="post">
+    <form action="ajouterfiche2" method="post">
         <div class="input">
             <label for="changeModulesAbsence">Module</label>
             <select name="changeModulesAbsence" id="changeModulesAbsence">
@@ -52,6 +59,26 @@ $userId = $_SESSION['auth']->idutilisateurs;
         </div>
 
 
+        <div class="hidden" id="hiddenFormDept">
+            <div class="input">
+                <label for="departement">Departement</label>
+                <select name="departement" id="departement" disabled>
+
+                </select>
+                <input type="hidden" value="" name="">
+            </div>
+
+            <div class="input">
+                <label for="formation">Formation</label>
+                <select name="formation" id="formation" disabled>
+
+                </select>
+            </div>
+
+            <input type="hidden" value="" name="departementId" id="departementId">
+            <input type="hidden" value="" name="formationId" id="formationId">
+        </div>
+
         <div class="input">
             <label for="changeGroupeAbs">Groupe</label>
             <select name="changeGroupeAbs" id="changeGroupeAbs" disabled>
@@ -63,22 +90,6 @@ $userId = $_SESSION['auth']->idutilisateurs;
                 }
                 ?>
             </select>
-        </div>
-
-        <div class="hidden" id="hiddenFormDept">
-            <div class="input">
-                <label for="departement">Departement</label>
-                <select name="departement" id="departement" disabled>
-
-                </select>
-            </div>
-
-            <div class="input">
-                <label for="formation">Formation</label>
-                <select name="formation" id="formation" disabled>
-
-                </select>
-            </div>
         </div>
 
         <div id="trombi" class="trombi">

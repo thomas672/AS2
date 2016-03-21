@@ -8,15 +8,15 @@
 	<form action="mesmodules" method="post">
 		<div class="menu-right">
 			<button type="submit" class="btn btn-red"><i class="fa fa-trash"></i> SUPPRIMER</button>
-			<button type="reset" class="btn btn-blue"><i class="fa fa-undo"></i> DESELCTIONNER</button>
 		</div>
 		<table border="none" width="100%">
 			<thead>
 				<tr>
-					<th></th>
+					<th><input type='checkbox' id="checkModuleAll"></th>
 					<th>CODE</th>
 					<th>NOM</th>
 					<th>DPT</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,7 +27,6 @@
 		</table>
 		<div class="menu-right">
 			<button type="submit" class="btn btn-red"><i class="fa fa-trash"></i> SUPPRIMER</button>
-			<button type="reset" class="btn btn-blue"><i class="fa fa-undo"></i> DESELCTIONNER</button>
 		</div>
 	</form>
 

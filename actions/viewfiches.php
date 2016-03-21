@@ -15,9 +15,9 @@ $userId = $_SESSION['auth']->idutilisateurs;
 //On recup les fiches absences du module choisi par l'utilisateur
 if(isset($_GET['idModuleFic'])){
 
-    $moduleId = intval($_GET['idModule']);
+    $moduleId = intval($_GET['idModuleFic']);
 
-    $data = $db->query("SELECT * FROM `absences` WHERE utilisateurs_idutilisateurs = $userId AND `modules_has_utilisateurs_modules_idmodules` = $moduleId ORDER BY dateabsences DESC LIMIT 0,20")->fetchAll();
+    $data = $db->query("SELECT * FROM `absences` WHERE idutilisateurs_utilisateurs = $userId AND `idmodules_absences` = $moduleId ORDER BY dateabsences DESC LIMIT 0,20")->fetchAll();
 
     echo json_encode($data);
 
@@ -54,4 +54,14 @@ if(isset($_GET['idGroupes']) AND isset($_GET['idDepartements']) AND isset($_GET[
 
     echo json_encode($data);
 
+}
+
+//On modifie l'excuse de l'etudiant depuis la page de la fiche (showfiche)
+
+if(isset($_GET['idEtudiant_excuse']) AND isset($_GET['idAbsence']) AND isset($_GET['valExcuse'])){
+    $valeurExcuse = intval($_GET['valExcuse']);
+    $idEtu = intval($_GET['idEtudiant_excuse']);
+    $idAbs = intval($_GET['idAbsence']);
+    $changeExc = $db->update("UPDATE `appsense`.`absences_has_etudiants` SET `excuse` = '$valeurExcuse' WHERE `idetudiants_etudiant` = $idEtu AND `idAbsence_absence` = $idAbs");
+    echo json_encode($changeExc);
 }

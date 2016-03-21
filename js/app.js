@@ -26,6 +26,14 @@ $(function() {
         }
     });
 
+//Gestion de module
+    $('#checkModuleAll').toggle(function(){
+        this.checked = true;
+        $('.checkboxModule:checkbox').attr('checked','checked');
+    },function(){
+        this.checked = false;
+        $('.checkboxModule:checkbox').removeAttr('checked');
+    })
 //Fonction pour ajouter un groupe à un etudiant
     $('#addGroupe').click(function() {
         var dossier = $('#numDossier').val();
@@ -80,16 +88,16 @@ $(function() {
                 $(results).each(function(key, value) {
                     $('#listFiches').append(
                         "<tr>"+
-                            "<td><a class='btn btn-red' id='"+value.idAbsences+"'><i class=\"fa fa-pencil\"></i></a></td>"+
+                            "<td class='centeredTd checkbox'><a class='btn btn-blue' href='showfiche?id="+value.idabsences+"'><i class=\"fa fa-pencil\"></i></a></td>"+
                             "<td>"+value.dateabsences+"</td>"+
-                            "<td>"+value.dureeabsences+"</td>"+
+                            "<td>"+value.dureeabsences+" heure(s)</td>"+
                         "</tr>"
                     );
                 })
             });
         return false;
     })
-
+    //Affichage des option caché pour la forma et le dpt
     $('#changeModulesAbsence').change(function() {
         var idModuleAbs = $('#changeModulesAbsence').val();
         $.get( "actions/viewfiches.php", { idModuleAbs: idModuleAbs })
@@ -105,15 +113,32 @@ $(function() {
         return false;
     });
 
+    //Changement d'excuse pour un etudiant selectionné ABSENT
+    $('.changeExcuse').change(function() {
+        var idEtudiant_excuse = $(this).attr('id');
+        var idAbsence = $('#idAbsence').val();
+        var valExcuse = $(this).val();
+        $.get( "actions/viewfiches.php", { idEtudiant_excuse:idEtudiant_excuse, idAbsence:idAbsence, valExcuse:valExcuse })
+            .done(function( data ) {
+                console.log(data);
+                return false;
+            });
+    });
+
+    //Ajout du trombi apres choix du groupe
     $('#changeGroupeAbs').change(function() {
         var idGroupes = $('#changeGroupeAbs').val();
         var idFormations = $('#departement').val();
         var idDepartements = $('#formation').val();
+        $('#departementId').attr('value', idFormations);
+        $('#formationId').attr('value', idDepartements);
         $.get( "actions/viewfiches.php", { idGroupes: idGroupes, idDepartements: idDepartements, idFormations: idFormations })
             .done(function( data ) {
                 var results = jQuery.parseJSON(data);
                 $('#trombi').empty();
+                var nbrEtu = 0;
                 $(results).each(function(key, value) {
+                    nbrEtu++;
                     $('#trombi').append(
                         '<div class="trombi-block text-center">'+
                             '<input type="checkbox" name="idEtuAbs[]" id="Etu'+value.idetudiants+'" value="'+value.idetudiants+'" />'+
@@ -127,6 +152,7 @@ $(function() {
                         '</div>'
                     );
                 });
+                $('#trombi').prepend('<h3>Nombre d\'etudiants : '+ nbrEtu + '</h3>');
                 $('#hiddenSignature').fadeIn();
             });
         return false;
